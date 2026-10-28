@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>selixy-design</title>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/typography.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/burger.css">
+  <link rel="stylesheet" href="css/panel.css">
+  <link rel="stylesheet" href="css/underline.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/project-card.css">
+  <link rel="stylesheet" href="css/button.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header-start">
+      <details class="burger burger--desktop">
+        <summary aria-label="Menu"><span class="burger-icon" aria-hidden="true"><span class="burger-bar burger-bar--1"></span><span class="burger-bar burger-bar--2"></span><span class="burger-bar burger-bar--3"></span></span></summary>
+        <ul class="burger-menu panel panel-list"><li><a href="#" aria-current="page">Accueil</a></li><li class="panel-separator"></li><li><button>Thème</button></li></ul>
+      </details>
+      <div class="header-brand"><span class="header-title">selixy-design</span></div>
+      <nav class="header-tabs"><a class="tab underline-fade" href="#" aria-current="page">Accueil</a><a class="tab" href="#">Autre</a></nav>
+    </div>
+    <nav class="header-account"><a class="tab" href="#">Login</a></nav>
+  </header>
+  <main class="stack">
+    <h1>selixy-design</h1>
+    <div class="row">
+      <button class="button button--primary"><span class="button__label">Principal</span><span class="button__chip"><svg class="button__icon" viewBox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6"/></svg></span></button>
+      <button class="button">Normal</button>
+      <button class="button button--subtle">Discret</button>
+      <button class="button button--danger">Danger</button>
+      <span class="pill">Pastille</span>
+    </div>
+    <div class="grid">
+      <div class="surface">Surface</div>
+      <div class="surface surface--clickable">Surface cliquable</div>
+    </div>
+    <div class="card">
+      <h1>Formulaire</h1>
+      <div class="field"><label for="n">Nom</label><input id="n"></div>
+      <div class="field"><label for="c">Choix</label><select id="c"><option>Un</option></select></div>
+      <label class="switch">Option <input type="checkbox" checked></label>
+      <p class="hint">Indication</p>
+      <p class="error">Erreur</p>
+    </div>
+    <p class="empty">État vide</p>
+    <section class="stack">
+      <span class="text text--eyebrow text--accent">Surtitre</span>
+      <h2 class="text text--display text--strong">Titre display</h2>
+      <h3 class="text text--heading">Titre de section</h3>
+      <p class="text text--body-lg text--dim">Paragraphe d'accroche, atténué.</p>
+      <p class="text text--body">Corps de texte.</p>
+      <p class="text text--micro">Micro</p>
+    </section>
+    <div class="row">
+      <span class="tag">Tag</span><span class="tag tag--mono">tag--mono</span>
+      <span class="badge"><span class="badge__dot"></span>Disponible</span>
+      <button class="floating-button" aria-label="Flottant">★</button>
+    </div>
+    <a class="link-card" href="#"><span class="icon-pill">✉</span>Carte-lien</a>
+    <input class="field__input" placeholder="Saisie seule">
+    <input class="field__input" aria-invalid="true" value="invalide">
+    <details>
+      <summary class="button">Ouvrir la fenêtre</summary>
+      <div class="popup"><div class="popup__sheet">
+        <button class="popup__action">Action</button>
+        <button class="popup__action popup__action--cancel" onclick="this.closest('details').open = false">Annuler</button>
+      </div></div>
+    </details>
+  </main>
+</body>
+</html>

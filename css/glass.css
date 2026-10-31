@@ -1,0 +1,28 @@
+/* Verre : voile de --glass-shift (15 %) de --glass-tint (noir en clair, blanc en sombre) posé sur ce qu'il y a dessous, et flou
+   --glass-blur. Jamais de fond semi-transparent en plus du voile. Ce qui est posé sur du verre s'écrit en --text-h, jamais en
+   gris atténué : un gris moyen se perd dès qu'un fond coloré passe derrière. Les deux se surchargent sur l'élément ou un ancêtre. <div class="glass">…</div> */
+.glass {
+  border-radius: var(--corner);
+  background: var(--_under), color-mix(in srgb, var(--glass-tint) var(--glass-shift), transparent);
+  -webkit-backdrop-filter: blur(var(--glass-blur)); backdrop-filter: blur(var(--glass-blur));
+}
+/* Un bloc de verre qui contient un menu (.select, .panel-group) ou une barre de verre (.chat__compose) porte son verre sur ::before, posé derrière ses enfants : un
+   élément à backdrop-filter est la racine de fond de ses descendants, et la liste ouverte ne flouterait plus la page derrière
+   le bloc. Pas de z-index (aucun contexte d'empilement) : la liste reste au-dessus du reste de la page. Le bloc doit être
+   positionné : le menu du burger l'est, .form-card le devient ici. */
+.form-card { position: relative; }
+.glass:has(.panel-group, .select, .chat__compose), .form-card { background: none; -webkit-backdrop-filter: none; backdrop-filter: none; }
+.glass:has(.panel-group, .select, .chat__compose)::before, .form-card::before {
+  content: ''; position: absolute; inset: 0; pointer-events: none; border-radius: inherit;
+  background: var(--_under), color-mix(in srgb, var(--glass-tint) var(--glass-shift), transparent);
+  -webkit-backdrop-filter: blur(var(--glass-blur)); backdrop-filter: blur(var(--glass-blur));
+}
+.glass:has(.panel-group, .select, .chat__compose) > *, .form-card > * { position: relative; }
+/* Couche du dessous : chaque surface de verre ajoute, au-dessus de son voile, une couche de la couleur de ce qu'il y a juste
+   dessous (--glass-under) à --glass-fill (50 %) : c'est la première couche de son fond, var(--_under). js/glass.js détecte la
+   couleur et la pose sur chaque surface ; sans lui, c'est le fond de la page (--bg-0). Le lecteur garde son gris neutre. */
+:root { --_under: none; }
+:where(.glass, .button, .form-card, .header, .card, .surface, .panel, .pill, .tag, .badge, .link-card, .floating-button, .popup__sheet,
+  .chat__actions, .chat__compose, .panel-group > .panel-list) {
+  --_under: linear-gradient(color-mix(in srgb, var(--glass-under) var(--glass-fill), transparent) 0 0);
+}

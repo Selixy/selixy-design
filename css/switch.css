@@ -1,0 +1,16 @@
+/* Interrupteur : <label class="switch">Libellé <input type="checkbox"></label>. Piste en pilule et bouton rond ; éteint : voile
+   renforcé (15 %) et bouton --text-h ; allumé : piste en accent, bouton --on-accent. */
+.switch { display: flex; align-items: center; justify-content: space-between; gap: var(--space-2); min-height: var(--field-height); color: var(--text-h); cursor: pointer; }
+.switch input {
+  appearance: none; flex: none; position: relative; width: 2.5rem; height: 1.25rem; margin: 0; cursor: pointer;
+  border-radius: 999px; background: color-mix(in srgb, var(--glass-tint) var(--button-shift-hover), transparent); transition: background-color var(--transition);
+}
+.switch input::after {
+  content: ''; position: absolute; top: .1875rem; left: .1875rem; width: .875rem; height: .875rem;
+  border-radius: 50%; background: var(--text-h); transition: transform var(--transition), background-color var(--transition);
+}
+.switch input:checked { background: var(--accent); }
+.switch input:checked::after { transform: translateX(1.25rem); background: var(--on-accent); }
+.switch input:focus-visible { outline: none; background: color-mix(in srgb, var(--glass-tint) 25%, transparent); }
+.switch input:checked:focus-visible { background: var(--accent-strong); }
+.switch input:disabled { opacity: .45; cursor: not-allowed; }

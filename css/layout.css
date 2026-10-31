@@ -1,0 +1,21 @@
+/* Dispositions intrinsèques : elles s'adaptent seules à la place disponible, sans media query, et tous leurs écarts viennent de
+   l'échelle --space-*. Chacune prend --gap (ou --s / --l) pour un autre écart.
+   .container : largeur maximale de page, centrée, marges latérales qui respectent les bords d'écran du téléphone.
+   .stack : empilement vertical. .cluster : éléments côte à côte qui passent à la ligne.
+   .grid : colonnes d'au moins --grid-min. .sidebar : un contenu principal (.sidebar__main) et une colonne (.sidebar__side,
+   --sidebar-width) qui passe dessous quand le principal descendrait sous la moitié de la largeur. */
+.container {
+  box-sizing: border-box; width: 100%; max-width: var(--container-width); margin-inline: auto;
+  padding-left: max(var(--space-2), env(safe-area-inset-left, 0px)); padding-right: max(var(--space-2), env(safe-area-inset-right, 0px));
+}
+.stack { display: flex; flex-direction: column; gap: var(--gap, var(--space-2)); }
+.cluster { display: flex; flex-wrap: wrap; align-items: center; gap: var(--gap, var(--space-1)); }
+.grid { display: grid; gap: var(--gap, var(--space-2)); grid-template-columns: repeat(auto-fill, minmax(min(100%, var(--grid-min, 12rem)), 1fr)); }
+.sidebar { display: flex; flex-wrap: wrap; align-items: flex-start; gap: var(--gap, var(--space-3)); }
+.sidebar__side { flex: 1 1 var(--sidebar-width); }
+.sidebar__main { flex: 999 1 0; min-width: min(100%, 50%); }
+
+.stack--s, .cluster--s, .grid--s, .sidebar--s { --gap: var(--space-1); }
+.stack--l, .cluster--l, .grid--l, .sidebar--l { --gap: var(--space-4); }
+.cluster--s { --gap: var(--space-0); }
+.cluster--l { --gap: var(--space-2); }

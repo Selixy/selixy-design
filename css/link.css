@@ -1,0 +1,15 @@
+/* Carte-lien : une ligne de verre entièrement cliquable, une icône en accent (.icon-pill) à gauche ; voile renforcé au survol.
+   Bouton flottant : un carré de verre de 56 px (cible tactile), icône seule ; --back pour un retour. */
+.link-card {
+  display: flex; align-items: center; gap: var(--space-2); width: 100%; min-height: var(--button-height-l); padding: 0 var(--space-2); box-sizing: border-box; border-radius: var(--corner);
+  text-align: left; text-decoration: none; color: var(--text-h); background: var(--_under), color-mix(in srgb, var(--glass-tint) var(--glass-shift), transparent); -webkit-backdrop-filter: blur(var(--glass-blur)); backdrop-filter: blur(var(--glass-blur));
+  cursor: pointer; transition: background-color var(--transition);
+}
+.link-card:hover { background: var(--_under), color-mix(in srgb, var(--glass-tint) var(--glass-shift-hover), transparent); }
+.link-card:focus-visible, .floating-button:focus-visible { outline: none; color: var(--accent); background: var(--_under), color-mix(in srgb, var(--glass-tint) var(--glass-shift-hover), transparent); }
+.icon-pill { display: flex; flex: none; align-items: center; justify-content: center; color: var(--accent); }
+.floating-button {
+  display: grid; place-items: center; width: 3.5rem; height: 3.5rem; padding: 0; border: 0; border-radius: var(--corner); color: var(--text-h); cursor: pointer;
+  background: var(--_under), color-mix(in srgb, var(--glass-tint) var(--glass-shift), transparent); -webkit-backdrop-filter: blur(var(--glass-blur)); backdrop-filter: blur(var(--glass-blur)); transition: background-color var(--transition);
+}
+.floating-button:hover { background: var(--_under), color-mix(in srgb, var(--glass-tint) var(--glass-shift-hover), transparent); }

@@ -1,0 +1,83 @@
+/* Lecteur vidéo, repris tel quel de SelixyWatch (2026-10-30) : cadre 16/9 noir arrondi, vidéo, titre en haut (plein écran),
+   grand bouton lecture, indicateur central, affiche. Les commandes sont dans player-controls.css. Le comportement (repos,
+   choix clair/foncé selon l'image, glisser sur la barre) reste au projet : il pose les classes d'état ci-dessous.
+   États : .player--empty (rien à lire), --audio (piste audio), --idle (souris immobile, commandes masquées), --stopped
+   (affiche visible), --light (bas de l'image clair : commandes foncées), --full (plein écran : sans arrondi, éléments
+   .player__full-only visibles).
+   Exception au principe du verre : sur la vidéo, le fond change sans arrêt, un voile qui assombrit ou éclaircit donne un rendu
+   moitié noir moitié blanc ; --player-veil est donc un gris neutre à 20 %, le même sur image claire ou sombre. */
+.player {
+  --player-accent: #b6a8ff;
+  --player-veil: rgba(128, 128, 128, .2);
+  --player-radius: 24px;
+  --player-fill-end: #d58cff;
+  --player-fill: linear-gradient(90deg, #9a86ff, var(--player-fill-end));
+  position: relative; overflow: hidden; width: 100%;
+  aspect-ratio: 16 / 9; max-height: var(--player-max-height, none);
+  background: #000; color: #fff; border-radius: var(--player-radius);
+  user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; -webkit-tap-highlight-color: transparent;
+}
+.player--empty { background: #0a0910; }
+.player--audio { background: radial-gradient(90% 120% at 15% 0%, #5a3bd9, transparent 60%), radial-gradient(80% 100% at 100% 100%, #b34fd0, transparent 60%), #1b1346; }
+@media (max-width: 899px) { .player { border-radius: 0 0 var(--player-radius) var(--player-radius); max-height: 70dvh; } }
+.player--full { position: absolute; inset: 0; width: 100%; height: 100%; aspect-ratio: auto; max-height: none; border-radius: 0; box-shadow: none; }
+
+.player__media { width: 100%; height: 100%; display: block; object-fit: contain; background: transparent; cursor: pointer; }
+.player:not(.player--empty):not(.player--audio) .player__media { background: #000; }
+.player--empty .player__media, .player--audio .player__media { visibility: hidden; }
+.player--idle, .player--idle .player__media { cursor: none; }
+
+.player__name {
+  position: absolute; inset: 0; margin: 0; padding: 4rem 1.5rem 5rem; display: grid; place-items: center; text-align: center;
+  font-size: clamp(1.4rem, 4vw, 2.6rem); font-weight: 700; line-height: 1.25; overflow-wrap: anywhere; pointer-events: none;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, .35);
+}
+.player__name:empty { display: none; }
+
+.player__top {
+  display: none;
+  position: absolute; inset: 12px 12px auto 12px; z-index: 3; justify-content: space-between; align-items: flex-start; gap: 10px;
+  pointer-events: none;
+}
+.player--full .player__top { display: flex; }
+.player__title {
+  min-width: 0; max-width: 100%; padding: 7px 14px; border-radius: 999px; font-size: 14px; font-weight: 600;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  background: var(--player-veil);
+  -webkit-backdrop-filter: blur(var(--glass-blur)); backdrop-filter: blur(var(--glass-blur));
+  transition: opacity .25s ease, background-color .3s ease;
+}
+.player__title:empty, .player--empty .player__title { display: none; }
+.player--idle .player__title { opacity: 0; }
+
+.player__play {
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 2;
+  display: grid; place-items: center; width: 84px; height: 84px; padding: 0; border: 0; border-radius: 50%; color: #fff; cursor: pointer;
+  background: var(--player-veil);
+  -webkit-backdrop-filter: blur(var(--glass-blur)); backdrop-filter: blur(var(--glass-blur));
+  transition: transform .15s ease, color .3s ease;
+}
+.player__play:hover { transform: translate(-50%, -50%) scale(1.1); }
+.player__play:active { transform: translate(-50%, -50%) scale(.92); }
+.player__play:focus-visible { outline: none; color: var(--player-accent); }
+.player--light .player__play { color: #15141c; }
+.player__play svg { width: 34px; height: 34px; }
+
+.player__indicator {
+  position: absolute; left: 50%; top: 50%; z-index: 1; pointer-events: none;
+  display: grid; place-items: center; min-width: 44px; height: 44px; padding: 0 16px;
+  font-size: 15px; font-weight: 600; font-variant-numeric: tabular-nums;
+  background: var(--player-veil); border-radius: 999px;
+  -webkit-backdrop-filter: blur(var(--glass-blur)); backdrop-filter: blur(var(--glass-blur));
+  opacity: 0; transform: translate(-50%, -50%) scale(.9);
+}
+.player__indicator.is-visible { animation: player-indicator .7s ease-out; }
+@keyframes player-indicator {
+  0% { opacity: 0; transform: translate(-50%, -50%) scale(.85); }
+  15% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  70% { opacity: 1; }
+  100% { opacity: 0; transform: translate(-50%, -50%) scale(1.08); }
+}
+.player__poster { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: none; background: #000; filter: brightness(.82); }
+.player--stopped .player__poster { display: block; }
+@media (max-width: 899px) { .player__top { inset: 8px 8px auto 8px; } }

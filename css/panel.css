@@ -1,8 +1,8 @@
-/* Panneau à plat : quatre coins pilotables un par un. Angles vifs par défaut ; .panel--round-tl/-tr/-br/-bl arrondissent
+/* Panneau à plat : quatre coins pilotables un par un, légèrement arrondis par défaut (--corner) ; .panel--round-tl/-tr/-br/-bl arrondissent
    un coin, .panel--round les quatre, du rayon global --panel-radius (tokens.css). .panel-list en fait une liste de liens. */
 .panel {
-  --radius-tl: 0px; --radius-tr: 0px; --radius-br: 0px; --radius-bl: 0px;
-  background: color-mix(in srgb, var(--glass-tint) var(--panel-shift), transparent); border: 0; backdrop-filter: blur(var(--panel-blur)); -webkit-backdrop-filter: blur(var(--panel-blur));
+  --radius-tl: var(--corner); --radius-tr: var(--corner); --radius-br: var(--corner); --radius-bl: var(--corner);
+  background: var(--_under), color-mix(in srgb, var(--glass-tint) var(--panel-shift), transparent); border: 0; backdrop-filter: blur(var(--panel-blur)); -webkit-backdrop-filter: blur(var(--panel-blur));
   border-radius: var(--radius-tl) var(--radius-tr) var(--radius-br) var(--radius-bl);
 }
 .panel--round    { --radius-tl: var(--panel-radius); --radius-tr: var(--panel-radius); --radius-br: var(--panel-radius); --radius-bl: var(--panel-radius); }
@@ -16,21 +16,72 @@
 .panel--sharp-l { --radius-tl: 0px; --radius-bl: 0px; }
 .panel--sharp-r { --radius-tr: 0px; --radius-br: 0px; }
 
-.panel-list { display: flex; flex-direction: column; gap: 2px; margin: 0; padding: 4px; list-style: none; }
-.panel-list a, .panel-list button, .panel-item {
-  position: relative; display: flex; align-items: center; width: 100%; min-height: 38px; padding: 8px 12px;
+.panel-list { display: flex; flex-direction: column; gap: var(--space-0); margin: 0; padding: var(--space-0); list-style: none; }
+.panel-list a, .panel-list button {
+  position: relative; display: flex; align-items: center; width: 100%; min-height: 38px; padding: var(--space-1) var(--space-2);
   font-family: inherit; font-size: 14px; font-weight: 500; text-decoration: none; text-align: left;
-  color: var(--text-dim); background: transparent; border: 0; border-radius: 0;
+  color: var(--text-h); background: transparent; border: 0; border-radius: 0;
   cursor: pointer; transition: background .15s ease, color .15s ease;
 }
-.panel-list a:hover, .panel-list button:hover, .panel-item:hover { color: var(--text-h); background: var(--bg-2); }
-.panel-list a:focus-visible, .panel-list button:focus-visible, .panel-item:focus-visible {
-  outline: 2px solid var(--accent); outline-offset: -2px;
+/* survol : un voile de verre, sur tous les items, courant compris (qui garde sa couleur d'accent) */
+.panel-list a:hover, .panel-list button:hover { background: color-mix(in srgb, var(--glass-tint) var(--glass-shift), transparent); }
+.panel-list a:focus-visible, .panel-list button:focus-visible {
+  outline: none; color: var(--accent); background: color-mix(in srgb, var(--glass-tint) var(--glass-shift), transparent);
 }
-/* actif : pas de fond teinté, texte contrasté */
-.panel-list a[aria-current='page'], .panel-list a.is-active, .panel-list button.is-active, .panel-item.is-active {
-  color: var(--text-h); background: transparent; font-weight: 600;
+/* courant (page : aria-current, option choisie : aria-selected) : couleur d'accent ; .panel-label est un titre de groupe, sans réaction au survol */
+.panel-list a[aria-current='page'], .panel-list [aria-selected='true'] {
+  color: var(--accent); font-weight: 600;
 }
-.panel-list a::after, .panel-list button::after, .panel-item::after { content: none !important; }
-.panel-label { display: block; padding: 8px 12px 4px; font-size: 13px; font-weight: 600; color: var(--text-h); }
-.panel-separator { height: 1px; margin: 4px 6px; list-style: none; background: var(--border); }
+.panel-list a::after, .panel-list button::after { content: none !important; }
+.panel-label { display: block; padding: var(--space-1) var(--space-2) var(--space-0); font-size: 13px; font-weight: 600; color: var(--text-h); }
+.panel-separator { height: 1px; margin: var(--space-0) var(--space-1); list-style: none; background: var(--border); }
+
+/* Liste dans une liste : <li><details class="panel-group"><summary>Réglages</summary><ul class="panel-list">…</ul></details></li>.
+   Sous 900 px, le groupe se déplie en place, en retrait ; au-delà, il s'ouvre en sous-menu de verre à droite. Ouverture au clic
+   (<details>), sans JavaScript. */
+.panel-group > summary {
+  display: flex; align-items: center; justify-content: space-between; gap: var(--space-2); min-height: 38px; padding: var(--space-1) var(--space-2);
+  font-size: 14px; font-weight: 500; color: var(--text-h); list-style: none; cursor: pointer; transition: background .15s ease;
+}
+.panel-group > summary::-webkit-details-marker { display: none; }
+.panel-group > summary::after { content: ''; width: 12px; height: 8px; background: var(--field-chevron) no-repeat center / contain; transition: transform .15s ease; }
+.panel-group > summary:hover { background: color-mix(in srgb, var(--glass-tint) var(--glass-shift), transparent); }
+.panel-group > summary:focus-visible { outline: none; color: var(--accent); background: color-mix(in srgb, var(--glass-tint) var(--glass-shift), transparent); }
+.panel-group[open] > summary::after { transform: rotate(180deg); }
+.panel-group:has([aria-current='page'], [aria-selected='true']) > summary { color: var(--accent); font-weight: 600; }
+@media (max-width: 899px) {
+  .panel-group > .panel-list { padding: 0 0 var(--space-0) var(--space-2); }
+  .panel-group[open] > .panel-list, .panel-group.is-closing > .panel-list { animation: none; }
+}
+@media (min-width: 900px) {
+  .panel-group { position: relative; }
+  .panel-group > summary::after { transform: rotate(-90deg); }
+  .panel-group[open] > summary::after { transform: rotate(-90deg); }
+  .panel-group > .panel-list {
+    position: absolute; left: 100%; top: -4px; min-width: 190px; z-index: 1; border-radius: var(--corner);
+    background: var(--_under), color-mix(in srgb, var(--glass-tint) var(--glass-shift), transparent);
+    -webkit-backdrop-filter: blur(var(--header-blur)); backdrop-filter: blur(var(--header-blur));
+  }
+}
+
+/* Déploiement d'un menu à l'ouverture : il se déroule depuis son bord haut. Pas d'opacité : un parent à opacité < 1 devient la
+   racine de fond de son verre, qui ne floute plus rien pendant l'animation ; seul transform est sans effet sur le verre.
+   Sert au groupe (.panel-group), au menu du burger (burger.css) et à la liste du sélecteur (select.css). */
+@keyframes panel-deploy {
+  from { transform: scaleY(0); }
+  to { transform: none; }
+}
+@keyframes panel-retract {
+  from { transform: none; }
+  to { transform: scaleY(0); }
+}
+.panel-group[open] > .panel-list { transform-origin: top; animation: panel-deploy var(--menu-deploy) cubic-bezier(.2, .8, .2, 1); }
+/* Rétraction : js/menus.js pose .is-closing au clic, joue panel-retract, puis referme le <details> à la fin de l'animation.
+   Sous 900 px, le groupe déplié en place n'a pas ces animations : js/menus.js anime sa hauteur, pour que le contenu en dessous
+   suive ; sans le script, il s'ouvre et se ferme d'un coup. */
+.panel-group.is-closing > .panel-list, .burger.is-closing > .burger-menu, .select__list.is-closing {
+  animation: panel-retract var(--menu-deploy) cubic-bezier(.4, 0, .8, .2) forwards;
+}
+@media (prefers-reduced-motion: reduce) {
+  .panel-group[open] > .panel-list, .burger[open] > .burger-menu, .select__list, .is-closing > .panel-list, .is-closing > .burger-menu { animation: none !important; }
+}

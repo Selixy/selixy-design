@@ -9,36 +9,39 @@ body {
   background: var(--bg-0);
 }
 
-a:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+/* focus clavier : jamais de contour, un surlignage (voile renforcé, accent) défini par chaque composant ; ici les liens de texte */
+a:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible { outline: none; }
+a:focus-visible { color: var(--accent); }
 
 main { max-width: var(--content-width); margin: 0 auto; padding: var(--space-3) var(--space-2); }
 
-.card {
+.form-card {
   max-width: 26rem;
   margin: var(--space-4) auto;
   padding: var(--space-3);
-  background: var(--bg-1);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
+  background: color-mix(in srgb, var(--glass-tint) var(--glass-shift), transparent);
+  -webkit-backdrop-filter: blur(var(--glass-blur)); backdrop-filter: blur(var(--glass-blur));
+  border-radius: var(--corner);
 }
-.card h1 { margin: 0 0 var(--space-2); font-size: 1.4rem; color: var(--text-h); }
+.form-card h1 { margin: 0 0 var(--space-2); font-size: 1.4rem; color: var(--text-h); }
 .field { margin: var(--space-2) 0; }
 .field label { display: block; font-size: .8rem; font-weight: 600; color: var(--text-dim); }
 /* .field enveloppe libellé et saisie ; .field__input habille une saisie seule, hors enveloppe */
-.field input, .field__input {
+.field input, .field select, .field textarea, .field__input, .select__value {
   --_bar: var(--accent);
-  box-sizing: border-box; width: 100%; min-height: var(--field-height); padding: .7em var(--field-pad);
-  font: inherit; color: var(--text-h); border: 0; border-radius: 0; outline: 0;
+  box-sizing: border-box; width: 100%; min-height: var(--field-height); padding: var(--space-1) var(--field-pad);
+  font: inherit; color: var(--text-h); border: 0; border-radius: var(--corner); outline: 0;
   background-color: color-mix(in srgb, var(--glass-tint) var(--field-shift), transparent);
   background-image: linear-gradient(var(--_bar), var(--_bar)); background-repeat: no-repeat; background-size: 0 100%;
   -webkit-backdrop-filter: blur(var(--panel-blur)); backdrop-filter: blur(var(--panel-blur));
   transition: background-color var(--transition), background-size var(--transition);
 }
-.field input::placeholder, .field__input::placeholder { color: var(--text-dim); }
-.field input:focus, .field__input:focus {
-  background-color: color-mix(in srgb, var(--glass-tint) var(--field-focus-shift), transparent); background-size: var(--field-bar) 100%;
+.field input::placeholder, .field textarea::placeholder, .field__input::placeholder { color: var(--text-dim); }
+.field input:focus, .field select:focus, .field textarea:focus, .field__input:focus, .select__value:focus-visible, .select__value[aria-expanded="true"] {
+  background-color: color-mix(in srgb, var(--glass-tint) var(--field-focus-shift), transparent);
 }
-.field input[aria-invalid="true"], .field__input[aria-invalid="true"] { --_bar: var(--warning); background-size: var(--field-bar) 100%; }
+/* la barre de gauche (--field-bar) ne sert qu'aux erreurs, jamais au focus ni à la sélection */
+.field input[aria-invalid="true"], .field select[aria-invalid="true"], .field__input[aria-invalid="true"] { --_bar: var(--warning); background-size: var(--field-bar) 100%; }
 .hint { font-size: .85rem; color: var(--text-dim); }
 .hint a { color: var(--accent); }
 .error { margin: 0 0 var(--space-2); font-size: .9rem; color: var(--warning); }

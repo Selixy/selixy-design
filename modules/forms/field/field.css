@@ -1,0 +1,19 @@
+.field { margin: var(--space-2) 0; }
+.field label { display: block; font-size: .8rem; font-weight: 600; color: var(--text-dim); }
+.field input, .field select, .field textarea, .field__input, .select__value {
+  --_bar: var(--accent);
+  box-sizing: border-box; width: 100%; min-height: var(--field-height); padding: var(--space-1) var(--field-pad);
+  font: inherit; color: var(--text-h); border: 0; border-radius: var(--corner); outline: 0;
+  background-color: color-mix(in srgb, var(--glass-tint) var(--field-shift), transparent);
+  background-image: linear-gradient(var(--_bar), var(--_bar)); background-repeat: no-repeat; background-size: 0 100%;
+  -webkit-backdrop-filter: blur(var(--panel-blur)); backdrop-filter: blur(var(--panel-blur));
+  transition: background-color var(--transition), background-size var(--transition);
+}
+.field input::placeholder, .field textarea::placeholder, .field__input::placeholder { color: var(--text-dim); }
+.field input:focus, .field select:focus, .field textarea:focus, .field__input:focus, .select__value:focus-visible, .select__value[aria-expanded="true"] {
+  background-color: color-mix(in srgb, var(--glass-tint) var(--field-focus-shift), transparent);
+}
+.field input[aria-invalid="true"], .field select[aria-invalid="true"], .field__input[aria-invalid="true"] { --_bar: var(--warning); background-size: var(--field-bar) 100%; }
+.hint { font-size: .85rem; color: var(--text-dim); }
+.hint a { color: var(--accent); }
+.error { margin: 0 0 var(--space-2); font-size: .9rem; color: var(--warning); }

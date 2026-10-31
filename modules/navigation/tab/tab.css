@@ -1,0 +1,11 @@
+.tab {
+  position: relative; display: inline-flex; align-items: center; justify-content: center;
+  flex: 0 0 auto; min-width: 80px; min-height: 40px; padding: 0 var(--space-2);
+  font-size: 14px; font-weight: 500; text-decoration: none; white-space: nowrap;
+  color: var(--text-h); transition: color .15s ease;
+}
+.tab:hover { color: var(--accent); }
+span.tab { cursor: default; color: var(--text-h); }
+button.tab { font-family: inherit; background: transparent; border: 0; border-radius: 0; cursor: pointer; }
+.tab[aria-current='page'], .tab[aria-current='true'] { color: var(--text-h); font-weight: 600; }
+.tab:focus-visible { outline: none; color: var(--accent); }

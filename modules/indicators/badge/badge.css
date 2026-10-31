@@ -1,0 +1,11 @@
+.badge {
+  display: inline-flex; align-items: center; gap: var(--space-1); padding: var(--space-0) var(--space-1); border-radius: var(--corner); font-size: .8rem; font-weight: 500; line-height: 1.25;
+  color: var(--text-h); background: var(--_under), color-mix(in srgb, var(--glass-tint) var(--glass-shift), transparent); -webkit-backdrop-filter: blur(var(--glass-blur)); backdrop-filter: blur(var(--glass-blur));
+}
+.badge__dot { position: relative; flex: none; width: .5rem; height: .5rem; background: var(--accent); border-radius: 50%; }
+.badge__dot::before {
+  content: ''; position: absolute; inset: 0; background: var(--accent); border-radius: 50%; opacity: .75;
+  animation: badge-ping 1.5s cubic-bezier(0, 0, .2, 1) infinite;
+}
+@keyframes badge-ping { 75%, 100% { transform: scale(2); opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .badge__dot::before { animation: none; } }

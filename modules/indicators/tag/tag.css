@@ -1,0 +1,5 @@
+.tag {
+  display: inline-flex; align-items: center; gap: var(--space-1); padding: var(--space-0) var(--space-1); border-radius: var(--corner); font-size: .8rem; font-weight: 500; line-height: 1.25;
+  color: var(--text-h); background: var(--_under), color-mix(in srgb, var(--glass-tint) var(--glass-shift), transparent); -webkit-backdrop-filter: blur(var(--glass-blur)); backdrop-filter: blur(var(--glass-blur));
+}
+.tag--mono { font-family: var(--mono); font-size: .75rem; }

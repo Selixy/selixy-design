@@ -1,0 +1,144 @@
+:root {
+  --bg-0: #f6f5f9;
+  --bg-1: #ffffff;
+  --bg-2: #edeaf3;
+  --bg-3: #e2deec;
+
+  --text: #2e2a3a;
+  --text-h: #1b1532;
+  --text-dim: #716b8c;
+  --field-chevron: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%23716b8c' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  --border: #e4dff2;
+  --border-strong: #d1cae6;
+
+  --accent: #2a159d;
+  --accent-strong: #241287;
+  --accent-bg: rgba(43, 21, 158, 0.08);
+  --on-accent: #ffffff;
+
+  --warning: #8a5a00;
+
+  --corner: 4px;
+  --panel-radius: 16px;
+  --glass-tint: black;
+  --glass-shift: 15%;
+  --glass-shift-hover: 22%;
+  --glass-blur: 14px;
+  --glass-fill: 50%;
+  --glass-under: var(--bg-0);
+  --menu-deploy: 140ms;
+  --z-menu: 100;
+  --z-header: 1000;
+  --z-popup: 1100;
+  --panel-shift: 15%;
+  --panel-blur: 14px;
+  --header-shift: 15%;
+  --header-blur: 28px;
+  --header-height: 41px;
+  --card-radius: 16px;
+  --button-height: 40px;
+  --button-height-s: 32px;
+  --button-height-l: 48px;
+  --button-radius: 16px;
+  --button-pad: var(--space-2);
+  --button-shift-hover: 15%;
+  --field-height: 40px;
+  --field-pad: var(--space-2);
+  --field-shift: 9%;
+  --field-focus-shift: 15%;
+  --field-bar: 4px;
+  --banner-shift: 16%;
+  --danger: #b3261e;
+  --on-danger: #ffffff;
+  --shadow-1: none;
+  --shadow-2: none;
+  --shadow-3: none;
+
+  --sans: 'Inter Variable', 'Inter', system-ui, 'Segoe UI', Roboto, sans-serif;
+  --display: 'Geist Variable', 'Geist', var(--sans);
+  --mono: 'Geist Mono Variable', 'Geist Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+
+  --radius-sm: 4px;
+  --radius: 8px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+
+  --transition-fast: 150ms ease-out;
+  --transition: 200ms ease-out;
+  --transition-slow: 300ms ease-out;
+
+  --space-0: .25rem;
+  --space-1: .5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2.5rem;
+  --space-5: 4rem;
+  --container-width: 72rem;
+  --sidebar-width: 22rem;
+  --chat-avatar: 40px;
+  --content-width: 64rem;
+
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg-0: #15141c;
+    --bg-1: #1f1e29;
+    --bg-2: #292735;
+    --bg-3: #353246;
+
+    --text: #cdc9dd;
+    --text-h: #f2effb;
+    --text-dim: #9a93b5;
+    --field-chevron: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%239a93b5' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    --border: #322f41;
+    --border-strong: #423e56;
+
+    --accent: #a99cff;
+    --accent-strong: #c6bdff;
+    --accent-bg: rgba(169, 156, 255, 0.14);
+    --on-accent: #15141c;
+
+    --warning: #f0c268;
+
+    --danger: #ff8a80;
+    --on-danger: #15141c;
+    --glass-tint: white;
+    --shadow-1: none;
+    --shadow-2: none;
+    --shadow-3: none;
+
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg-0: #15141c;
+  --bg-1: #1f1e29;
+  --bg-2: #292735;
+  --bg-3: #353246;
+
+  --text: #cdc9dd;
+  --text-h: #f2effb;
+  --text-dim: #9a93b5;
+  --field-chevron: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%239a93b5' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  --border: #322f41;
+  --border-strong: #423e56;
+
+  --accent: #a99cff;
+  --accent-strong: #c6bdff;
+  --accent-bg: rgba(169, 156, 255, 0.14);
+  --on-accent: #15141c;
+
+  --warning: #f0c268;
+
+  --danger: #ff8a80;
+  --on-danger: #15141c;
+  --glass-tint: white;
+  --shadow-1: none;
+  --shadow-2: none;
+  --shadow-3: none;
+
+  color-scheme: dark;
+}

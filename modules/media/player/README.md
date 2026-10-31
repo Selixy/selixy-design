@@ -1,0 +1,12 @@
+# player
+
+Fichiers : `player-controls.css`, `player.css`.
+
+## Rôle
+
+- le lecteur vidéo de SelixyWatch, repris tel quel (rendu et valeurs identiques, noms en anglais). `.player` (cadre 16/9, `__media`, `__top` + `__title`, `__name`, `__play`, `__indicator` + `.is-visible`, `__poster`), `__controls` (`__bar` + `.is-dragging`, `__track`, `__fill` réglé par `--player-position`, `__row`, `__spacer`, `__island`, `__island--time`, `__button`, `__time`, `__volume`, `__preview` + `-image` / `-time`, `__full-only`). États posés par le projet : `--empty`, `--audio`, `--idle`, `--stopped`, `--light`, `--full`. Jetons : `--player-accent`, `--player-veil`, `--player-radius`, `--player-fill`, `--player-fill-end`, `--player-max-height`. Formes plates : voile et `--glass-blur`, sans bord, reflet ni ombre. Le comportement (repos, choix clair/foncé selon l'image, glisser) reste au projet. Boutons de base : lecture, son, plein écran ; un projet en ajoute un en posant un `<button class="player__button">` de plus dans un `.player__island`.
+
+## Pourquoi
+
+- Lecteur vidéo, repris tel quel de SelixyWatch (2026-10-30) : cadre 16/9 noir arrondi, vidéo, titre en haut (plein écran), grand bouton lecture, indicateur central, affiche. Les commandes sont dans `player-controls.css`. Le comportement (repos, choix clair/foncé selon l'image, glisser sur la barre) reste au projet : il pose les classes d'état ci-dessous. États : .player--empty (rien à lire), --audio (piste audio), --idle (souris immobile, commandes masquées), --stopped (affiche visible), --light (bas de l'image clair : commandes foncées), --full (plein écran : sans arrondi, éléments .player__full-only visibles). Exception au principe du verre : sur la vidéo, le fond change sans arrêt, un voile qui assombrit ou éclaircit donne un rendu moitié noir moitié blanc ; --player-veil est donc un gris neutre à 20 %, le même sur image claire ou sombre.
+- Commandes du lecteur (.player__controls), reprises telles quelles de SelixyWatch : barre de progression avec point de position, îlots de verre arrondis (formes plates : voile et flou, sans bord, reflet ni ombre), boutons ronds sans fond, temps sans cadre, volume qui s'ouvre au survol, aperçu au survol de la barre. Le fondu de repos s'applique aux îlots et à la barre, jamais au conteneur : un parent à opacité < 1 devient la racine de fond de ses enfants, et leur flou attendrait la fin du fondu. --light passe les commandes en foncé sur une image claire.

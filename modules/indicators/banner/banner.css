@@ -1,0 +1,9 @@
+.banner {
+  --_c: var(--accent);
+  display: flex; align-items: center; gap: var(--space-1); margin: 0; border-radius: var(--corner); box-sizing: border-box; min-height: var(--button-height); padding: var(--space-1) var(--space-2); font-size: .9rem; font-weight: 500; color: var(--text-h);
+  background: color-mix(in srgb, var(--_c) var(--banner-shift), transparent); -webkit-backdrop-filter: blur(var(--glass-blur)); backdrop-filter: blur(var(--glass-blur));
+}
+.banner--error { --_c: var(--danger); }
+.banner--warning { --_c: var(--warning); }
+.banner--neutral { --_c: var(--glass-tint); --banner-shift: var(--glass-shift); }
+.banner a { color: inherit; }

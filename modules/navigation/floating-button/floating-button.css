@@ -1,0 +1,6 @@
+.floating-button {
+  display: grid; place-items: center; width: 3.5rem; height: 3.5rem; padding: 0; border: 0; border-radius: var(--corner); color: var(--text-h); cursor: pointer;
+  background: var(--_under), color-mix(in srgb, var(--glass-tint) var(--glass-shift), transparent); -webkit-backdrop-filter: blur(var(--glass-blur)); backdrop-filter: blur(var(--glass-blur)); transition: background-color var(--transition);
+}
+.floating-button:hover { background: var(--_under), color-mix(in srgb, var(--glass-tint) var(--glass-shift-hover), transparent); }
+.floating-button:focus-visible { outline: none; color: var(--accent); background: var(--_under), color-mix(in srgb, var(--glass-tint) var(--glass-shift-hover), transparent); }

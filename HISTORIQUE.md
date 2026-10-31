@@ -3,90 +3,90 @@
 Jusqu'au 2026-10-31, chaque commit montait la version (v0.1.0 à v8.10.4) : des numéros de version majeure pour une
 bibliothèque qui n'en avait encore aucune. La numérotation repart de v0.1 (état de v8.10.4), en deux nombres (vX.Y), jusqu'à une vraie v1.0.
 Les anciennes étiquettes sont retirées ; leurs commits restent dans l'historique (sauf `v8.10.2`, commit erroné jamais
-publié). Une copie faite par `tools/copy-to.sh` avec un ancien numéro se retrouve ici.
+publié). Identifiants de commit à jour après le retrait des signatures automatiques (2026-10-31). Une copie faite par `tools/copy-to.sh` avec un ancien numéro se retrouve ici.
 
 ## Anciennes étiquettes
 
 | Étiquette | Commit | Date | Sujet |
 |---|---|---|---|
 | `v0.1.0` | `a3333d0` | 2026-10-19 | Design commun extrait de Miraxy : jetons, base, en-tête, composants |
-| `v0.2.0` | `f88259e` | 2026-10-22 | v0.2.0 : noms en anglais et BEM, commentaires repris de Miraxy, script de copie |
-| `v0.3.0` | `bdb3ba0` | 2026-10-22 | v0.3.0 : typographie et composants repris de SelixyUI, bascule de thème par data-theme |
-| `v0.4.0` | `42e280f` | 2026-10-22 | v0.4.0 : en-tête pour site à sections (aria-current true, burger__button, burger__heading, liste défilante) |
-| `v0.5.0` | `28763a6` | 2026-10-22 | v0.5.0 : burger --top-left et --desktop |
-| `v1.0.0` | `57810d1` | 2026-10-22 | v1.0.0 : en-tête, burger et panneaux de Miraxy (version en production) |
-| `v1.1.0` | `d24b4fa` | 2026-10-23 | Tout à plat : plus d'ombres ni de flou, panneaux translucides à bordure marquée |
-| `v1.1.1` | `f34ed77` | 2026-10-23 | README v1.1.1 |
-| `v1.2.0` | `d2ef7f0` | 2026-10-23 | Panneaux sans bordure ; règle des panneaux à plat dans la README |
-| `v1.3.0` | `a9c5a05` | 2026-10-23 | Panneaux à 50 % avec flou d'arrière-plan |
-| `v1.4.0` | `f297dd0` | 2026-10-23 | Panneaux plus clairs que la page, éclaircissement dynamique de l'arrière-plan |
-| `v1.5.0` | `7e02807` | 2026-10-23 | Panneaux : voile à 5 % |
-| `v1.6.0` | `694132e` | 2026-10-23 | Coins du panneau pilotables, rayon global, menu collé sous l'en-tête |
-| `v1.7.0` | `cb0abb7` | 2026-10-23 | En-tête : voile à 7 % |
-| `v1.8.0` | `59c01ce` | 2026-10-23 | Verre dépoli pilotable : --panel-shift/blur, --header-shift/blur |
-| `v1.9.0` | `8582852` | 2026-10-23 | project-card : coins pilotables (--card-radius-*, --project-card--round-*) |
-| `v2.0.0` | `5010c78` | 2026-10-23 | button.css : bouton verre + pastille d'action, coin bas-droit arrondi (v2.0.0) |
-| `v2.1.0` | `6ae66f0` | 2026-10-23 | Retour au verre : champs, bandeaux, voile du bouton réduit (v2.1.0) |
-| `v2.1.1` | `a54663e` | 2026-10-23 | En-tête : verre sur ::before pour que le flou des menus fonctionne (v2.1.1) |
-| `v3.0.0` | `4bf37cc` | 2026-10-30 | Noms génériques (v3.0.0) : project-card devient card, project-cards devient cards, la carte de formulaire devient form-card |
-| `v3.1.0` | `66ab033` | 2026-10-30 | Verre (v3.1.0) : classe .glass, cartes sans image en verre au lieu de la couverture violette |
-| `v3.2.0` | `d1d2061` | 2026-10-30 | Lecteur vidéo (v3.2.0) : player.css et player-controls.css repris de SelixyWatch ; vitrine : sections En-tête et Lecteur |
-| `v3.2.1` | `076fa19` | 2026-10-30 | Burger (v3.2.1) : sous 900 px, le menu ancré prend toute la largeur |
-| `v3.2.2` | `e4f349a` | 2026-10-30 | Burger (v3.2.2) : menu lisible sur un fond coloré, voile de verre sur --menu-veil et flou de 24 px |
-| `v3.3.0` | `b748b72` | 2026-10-30 | Verre (v3.3.0) : .glass abaisse la saturation du fond, le menu du burger est du verre pur ; retrait du fond --menu-veil |
-| `v3.4.0` | `1e5e3f8` | 2026-10-30 | Lisibilité sur le verre (v3.4.0) : texte --text-h sur le verre, courant en graisse et trait d'accent, menu au flou de l'en-tête ; retrait de la baisse de saturation |
-| `v3.5.0` | `f265285` | 2026-10-30 | Lecteur (v3.5.0) : grand bouton lecture en îlot de verre au niveau des autres boutons, sans bulle de chat dans la vitrine ; boutons, composants et dispositions marqués provisoires |
-| `v3.6.0` | `fe17ffd` | 2026-10-30 | Lecteur (v3.6.0) : aplati, sans bords, reflets, ombres ni halo ; formes de verre seulement (voile et --glass-blur) |
-| `v3.6.1` | `3bc6ef6` | 2026-10-30 | Vitrine du lecteur (v3.6.1) : sans bouton mode studio, boutons de base listés, exemple d'un bouton ajouté |
-| `v3.7.0` | `1ccb726` | 2026-10-30 | Lecteur (v3.7.0) : voile gris neutre à 20 % sur la vidéo, le même sur image claire ou sombre |
-| `v3.7.1` | `aa388c9` | 2026-10-30 | Lecteur (v3.7.1) : point de la barre à la couleur de la fin de la ligne de progression |
-| `v3.7.2` | `fef9bc9` | 2026-10-30 | Vitrine (v3.7.2) : toutes les classes de la bibliothèque sont montrées |
-| `v4.0.0` | `83421c7` | 2026-10-30 | Carte générique (v4.0.0) : la mise en page du portfolio (galerie, défilement calé, feature, more, kind, zoom) sort de la bibliothèque |
-| `v4.0.1` | `90ef9af` | 2026-10-30 | Panneaux (v4.0.1) : survol des items en voile de verre, item courant compris |
-| `v4.0.2` | `6e2c551` | 2026-10-30 | Lecteur (v4.0.2) : indicateur central à la taille d'un îlot de commandes |
-| `v5.0.0` | `f0f14ca` | 2026-10-30 | Panneaux (v5.0.0) : .panel-list en liste de choix (aria-selected), retrait de .panel-item et .is-active inutilisés |
-| `v5.1.0` | `44900e8` | 2026-10-30 | Formulaires (v5.1.0) : select et textarea en champ de verre comme les autres, flèche maison, liste ouverte en verre là où c'est possible |
-| `v5.2.0` | `f4b624e` | 2026-10-30 | Sélecteur (v5.2.0) : .select et js/select.js, la liste de choix en verre dans tous les navigateurs |
-| `v5.3.0` | `7c91435` | 2026-10-30 | Champs plus fins (v5.3.0) : hauteur 40 px, marge intérieure 0,75 rem |
-| `v6.0.0` | `930c647` | 2026-10-30 | Boutons (v6.0.0) : verre plat, 40 px, coins vifs, icône à côté du texte, sans pastille ; deux formes de principal à départager |
-| `v6.1.0` | `2b4f02d` | 2026-10-30 | Boutons (v6.1.0) : principal = .button--primary, retrait de .button--accent ; état non sélectionnable montré pour chaque bouton |
-| `v6.2.0` | `a2dc777` | 2026-10-30 | Listes dans les listes (v6.2.0) : .panel-group en place sur téléphone, en sous-menu sur ordinateur ; vitrine dans un iPhone et un MacBook |
-| `v6.3.0` | `ec69042` | 2026-10-30 | Menus (v6.3.0) : animation de déploiement à l'ouverture (burger, groupe, sélecteur), par transform seulement |
-| `v6.4.0` | `ecc5a53` | 2026-10-30 | Menus (v6.4.0) : rétraction animée à la fermeture (js/menus.js, js/select.js), déroulé depuis une hauteur nulle |
-| `v6.5.0` | `17e1abc` | 2026-10-30 | Menus (v6.5.0) : sur téléphone, le groupe en place anime sa hauteur et le contenu suit ; animations à 140 ms |
-| `v6.6.0` | `8f5b1bd` | 2026-10-30 | Superposition (v6.6.0) : l'en-tête passe devant tout le contenu, menus compris ; seules les fenêtres surgissantes passent devant lui |
-| `v7.0.0` | `6a7646d` | 2026-10-30 | Composants et dispositions (v7.0.0) : refaits en verre plat, découpés en fichiers d'une responsabilité, --gap réglable |
-| `v7.1.0` | `248ad8e` | 2026-10-30 | Coins (v7.1.0) : légèrement arrondis par défaut partout (--corner, 4 px), toujours réglables ; interrupteur de nouveau rond |
-| `v7.2.0` | `4610536` | 2026-10-30 | Focus (v7.2.0) : plus de contour, un surlignage (voile renforcé, accent) comme au survol |
-| `v8.0.0` | `6edc8be` | 2026-10-30 | Dispositions (v8.0.0) : échelle d'espacements --space-0..5, dispositions intrinsèques .container .stack .cluster .grid .sidebar |
-| `v8.1.0` | `e615094` | 2026-10-30 | Espacements (v8.1.0) : toutes les marges des composants viennent de l'échelle --space-*, carte de formulaire en verre plat |
-| `v8.2.0` | `d165a58` | 2026-10-30 | Chat (v8.2.0) : .chat, fil de messages sans bulles et zone d'écriture, repris de SelixyWatch et aligné sur la bibliothèque |
-| `v8.2.1` | `a34deee` | 2026-10-30 | Champs (v8.2.1) : plus de barre d'accent au focus, la barre de gauche est réservée aux erreurs |
-| `v8.2.2` | `875151c` | 2026-10-30 | Verre (v8.2.2) : un bloc de verre qui contient un menu porte son verre sur ::before ; la liste du sélecteur floute de nouveau la page |
-| `v8.2.3` | `c08a027` | 2026-10-30 | Burger (v8.2.3) : le menu ancré suit l'en-tête au défilement et pendant le rebond élastique |
-| `v8.3.0` | `79afcd2` | 2026-10-30 | Chat (v8.3.0) : réagir, répondre et intégrer des médias |
-| `v8.4.0` | `bbeb210` | 2026-10-30 | Chat (v8.4.0) : repensé d'après Discord |
-| `v8.4.1` | `31b9a40` | 2026-10-30 | Chat (v8.4.1) : actions en petits boutons sans verre |
-| `v8.4.2` | `c906d67` | 2026-10-30 | Chat (v8.4.2) : le bandeau de réponse dans la barre d'écriture, un seul bloc |
-| `v8.4.3` | `76db296` | 2026-10-30 | Boutons et chat (v8.4.3) : .button--subtle sans flou propre, actions du chat en un seul bloc |
-| `v8.4.4` | `62f4b2a` | 2026-10-30 | Chat (v8.4.4) : barre d'écriture resserrée, sans flou empilé |
-| `v8.5.0` | `0c82e6b` | 2026-10-30 | Chat (v8.5.0) : barre d'écriture en verre, le fil défile dessous |
-| `v8.5.1` | `ae2d0ef` | 2026-10-30 | Verre (v8.5.1) : la barre d'écriture du chat floute de nouveau le fil |
-| `v8.5.2` | `97d1029` | 2026-10-30 | Chat (v8.5.2) : gris neutre à 10 % sur la barre d'écriture |
-| `v8.5.3` | `6f21609` | 2026-10-30 | Chat (v8.5.3) : barre d'écriture teintée de la couleur du fond du chat |
-| `v8.5.4` | `7196b41` | 2026-10-30 | Chat (v8.5.4) : barre d'écriture sans surlignage au focus, teinte fixe |
-| `v8.6.0` | `8e5ca4b` | 2026-10-30 | Chat (v8.6.0) : actions à cheval sur le bord haut, chat fonctionnel dans la vitrine |
-| `v8.7.0` | `415b7dd` | 2026-10-30 | Verre (v8.7.0) : couche de la couleur du dessous sur toutes les surfaces, détectée par js/glass.js |
-| `v8.7.1` | `9c319a3` | 2026-10-30 | Verre (v8.7.1) : couche du dessous à 20 % |
-| `v8.7.2` | `6352cd9` | 2026-10-30 | Verre (v8.7.2) : couche du dessous à 60 %, comme la barre d'écriture validée |
-| `v8.8.0` | `fa2a667` | 2026-10-31 | Verre (v8.8.0) : voile à 15 % par défaut, couche du dessous à 50 %, boutons compris |
-| `v8.9.0` | `bd43aa3` | 2026-10-31 | Chat (v8.9.0) : palette d'émojis complète avec recherche dans la langue du système |
-| `v8.9.1` | `d72a6bd` | 2026-10-31 | Verre (v8.9.1) : la couleur du dessous arrive dès l'ouverture d'un menu, pas après l'animation |
-| `v8.10.0` | `588dfbc` | 2026-10-31 | Menus (v8.10.0) : tout menu contextuel se ferme sur Échap ou sur un clic ailleurs |
-| `v8.10.1` | `971898a` | 2026-10-31 | Menus (v8.10.1) : data-pinned garde ouverts les menus montrés ouverts |
+| `v0.2.0` | `e6b4c83` | 2026-10-22 | v0.2.0 : noms en anglais et BEM, commentaires repris de Miraxy, script de copie |
+| `v0.3.0` | `42688b1` | 2026-10-22 | v0.3.0 : typographie et composants repris de SelixyUI, bascule de thème par data-theme |
+| `v0.4.0` | `c73eed2` | 2026-10-22 | v0.4.0 : en-tête pour site à sections (aria-current true, burger__button, burger__heading, liste défilante) |
+| `v0.5.0` | `b05f833` | 2026-10-22 | v0.5.0 : burger --top-left et --desktop |
+| `v1.0.0` | `31d92b1` | 2026-10-22 | v1.0.0 : en-tête, burger et panneaux de Miraxy (version en production) |
+| `v1.1.0` | `c7e084c` | 2026-10-23 | Tout à plat : plus d'ombres ni de flou, panneaux translucides à bordure marquée |
+| `v1.1.1` | `d248a57` | 2026-10-23 | README v1.1.1 |
+| `v1.2.0` | `3061b4e` | 2026-10-23 | Panneaux sans bordure ; règle des panneaux à plat dans la README |
+| `v1.3.0` | `c0816ac` | 2026-10-23 | Panneaux à 50 % avec flou d'arrière-plan |
+| `v1.4.0` | `36b3974` | 2026-10-23 | Panneaux plus clairs que la page, éclaircissement dynamique de l'arrière-plan |
+| `v1.5.0` | `5439538` | 2026-10-23 | Panneaux : voile à 5 % |
+| `v1.6.0` | `f990e5d` | 2026-10-23 | Coins du panneau pilotables, rayon global, menu collé sous l'en-tête |
+| `v1.7.0` | `75ae66c` | 2026-10-23 | En-tête : voile à 7 % |
+| `v1.8.0` | `2553159` | 2026-10-23 | Verre dépoli pilotable : --panel-shift/blur, --header-shift/blur |
+| `v1.9.0` | `e5f38e7` | 2026-10-23 | project-card : coins pilotables (--card-radius-*, --project-card--round-*) |
+| `v2.0.0` | `5ae19ab` | 2026-10-23 | button.css : bouton verre + pastille d'action, coin bas-droit arrondi (v2.0.0) |
+| `v2.1.0` | `5fb388e` | 2026-10-23 | Retour au verre : champs, bandeaux, voile du bouton réduit (v2.1.0) |
+| `v2.1.1` | `075e75c` | 2026-10-23 | En-tête : verre sur ::before pour que le flou des menus fonctionne (v2.1.1) |
+| `v3.0.0` | `9459cc8` | 2026-10-30 | Noms génériques (v3.0.0) : project-card devient card, project-cards devient cards, la carte de formulaire devient form-card |
+| `v3.1.0` | `c9074f1` | 2026-10-30 | Verre (v3.1.0) : classe .glass, cartes sans image en verre au lieu de la couverture violette |
+| `v3.2.0` | `f8ccb18` | 2026-10-30 | Lecteur vidéo (v3.2.0) : player.css et player-controls.css repris de SelixyWatch ; vitrine : sections En-tête et Lecteur |
+| `v3.2.1` | `73e2b2e` | 2026-10-30 | Burger (v3.2.1) : sous 900 px, le menu ancré prend toute la largeur |
+| `v3.2.2` | `f8b31d3` | 2026-10-30 | Burger (v3.2.2) : menu lisible sur un fond coloré, voile de verre sur --menu-veil et flou de 24 px |
+| `v3.3.0` | `20a03c8` | 2026-10-30 | Verre (v3.3.0) : .glass abaisse la saturation du fond, le menu du burger est du verre pur ; retrait du fond --menu-veil |
+| `v3.4.0` | `b994492` | 2026-10-30 | Lisibilité sur le verre (v3.4.0) : texte --text-h sur le verre, courant en graisse et trait d'accent, menu au flou de l'en-tête ; retrait de la baisse de saturation |
+| `v3.5.0` | `a4df258` | 2026-10-30 | Lecteur (v3.5.0) : grand bouton lecture en îlot de verre au niveau des autres boutons, sans bulle de chat dans la vitrine ; boutons, composants et dispositions marqués provisoires |
+| `v3.6.0` | `cded9e4` | 2026-10-30 | Lecteur (v3.6.0) : aplati, sans bords, reflets, ombres ni halo ; formes de verre seulement (voile et --glass-blur) |
+| `v3.6.1` | `e3db567` | 2026-10-30 | Vitrine du lecteur (v3.6.1) : sans bouton mode studio, boutons de base listés, exemple d'un bouton ajouté |
+| `v3.7.0` | `0bc889d` | 2026-10-30 | Lecteur (v3.7.0) : voile gris neutre à 20 % sur la vidéo, le même sur image claire ou sombre |
+| `v3.7.1` | `6dc81a0` | 2026-10-30 | Lecteur (v3.7.1) : point de la barre à la couleur de la fin de la ligne de progression |
+| `v3.7.2` | `6b3e234` | 2026-10-30 | Vitrine (v3.7.2) : toutes les classes de la bibliothèque sont montrées |
+| `v4.0.0` | `8a39a0a` | 2026-10-30 | Carte générique (v4.0.0) : la mise en page du portfolio (galerie, défilement calé, feature, more, kind, zoom) sort de la bibliothèque |
+| `v4.0.1` | `5b36b9a` | 2026-10-30 | Panneaux (v4.0.1) : survol des items en voile de verre, item courant compris |
+| `v4.0.2` | `c98413d` | 2026-10-30 | Lecteur (v4.0.2) : indicateur central à la taille d'un îlot de commandes |
+| `v5.0.0` | `3a0efe5` | 2026-10-30 | Panneaux (v5.0.0) : .panel-list en liste de choix (aria-selected), retrait de .panel-item et .is-active inutilisés |
+| `v5.1.0` | `2d067e4` | 2026-10-30 | Formulaires (v5.1.0) : select et textarea en champ de verre comme les autres, flèche maison, liste ouverte en verre là où c'est possible |
+| `v5.2.0` | `b1086ff` | 2026-10-30 | Sélecteur (v5.2.0) : .select et js/select.js, la liste de choix en verre dans tous les navigateurs |
+| `v5.3.0` | `dc600a3` | 2026-10-30 | Champs plus fins (v5.3.0) : hauteur 40 px, marge intérieure 0,75 rem |
+| `v6.0.0` | `ef15b7d` | 2026-10-30 | Boutons (v6.0.0) : verre plat, 40 px, coins vifs, icône à côté du texte, sans pastille ; deux formes de principal à départager |
+| `v6.1.0` | `9f3d229` | 2026-10-30 | Boutons (v6.1.0) : principal = .button--primary, retrait de .button--accent ; état non sélectionnable montré pour chaque bouton |
+| `v6.2.0` | `909a28b` | 2026-10-30 | Listes dans les listes (v6.2.0) : .panel-group en place sur téléphone, en sous-menu sur ordinateur ; vitrine dans un iPhone et un MacBook |
+| `v6.3.0` | `e13b533` | 2026-10-30 | Menus (v6.3.0) : animation de déploiement à l'ouverture (burger, groupe, sélecteur), par transform seulement |
+| `v6.4.0` | `e6c49a3` | 2026-10-30 | Menus (v6.4.0) : rétraction animée à la fermeture (js/menus.js, js/select.js), déroulé depuis une hauteur nulle |
+| `v6.5.0` | `8cb36ee` | 2026-10-30 | Menus (v6.5.0) : sur téléphone, le groupe en place anime sa hauteur et le contenu suit ; animations à 140 ms |
+| `v6.6.0` | `ae7f0c6` | 2026-10-30 | Superposition (v6.6.0) : l'en-tête passe devant tout le contenu, menus compris ; seules les fenêtres surgissantes passent devant lui |
+| `v7.0.0` | `5c86ed4` | 2026-10-30 | Composants et dispositions (v7.0.0) : refaits en verre plat, découpés en fichiers d'une responsabilité, --gap réglable |
+| `v7.1.0` | `f61b75a` | 2026-10-30 | Coins (v7.1.0) : légèrement arrondis par défaut partout (--corner, 4 px), toujours réglables ; interrupteur de nouveau rond |
+| `v7.2.0` | `720f1c8` | 2026-10-30 | Focus (v7.2.0) : plus de contour, un surlignage (voile renforcé, accent) comme au survol |
+| `v8.0.0` | `8ba28c2` | 2026-10-30 | Dispositions (v8.0.0) : échelle d'espacements --space-0..5, dispositions intrinsèques .container .stack .cluster .grid .sidebar |
+| `v8.1.0` | `07bcda3` | 2026-10-30 | Espacements (v8.1.0) : toutes les marges des composants viennent de l'échelle --space-*, carte de formulaire en verre plat |
+| `v8.2.0` | `8e641c6` | 2026-10-30 | Chat (v8.2.0) : .chat, fil de messages sans bulles et zone d'écriture, repris de SelixyWatch et aligné sur la bibliothèque |
+| `v8.2.1` | `21cd41b` | 2026-10-30 | Champs (v8.2.1) : plus de barre d'accent au focus, la barre de gauche est réservée aux erreurs |
+| `v8.2.2` | `71120e4` | 2026-10-30 | Verre (v8.2.2) : un bloc de verre qui contient un menu porte son verre sur ::before ; la liste du sélecteur floute de nouveau la page |
+| `v8.2.3` | `e94b4e1` | 2026-10-30 | Burger (v8.2.3) : le menu ancré suit l'en-tête au défilement et pendant le rebond élastique |
+| `v8.3.0` | `6223e34` | 2026-10-30 | Chat (v8.3.0) : réagir, répondre et intégrer des médias |
+| `v8.4.0` | `efb45fb` | 2026-10-30 | Chat (v8.4.0) : repensé d'après Discord |
+| `v8.4.1` | `dc82177` | 2026-10-30 | Chat (v8.4.1) : actions en petits boutons sans verre |
+| `v8.4.2` | `0147daf` | 2026-10-30 | Chat (v8.4.2) : le bandeau de réponse dans la barre d'écriture, un seul bloc |
+| `v8.4.3` | `ccde70f` | 2026-10-30 | Boutons et chat (v8.4.3) : .button--subtle sans flou propre, actions du chat en un seul bloc |
+| `v8.4.4` | `9effa38` | 2026-10-30 | Chat (v8.4.4) : barre d'écriture resserrée, sans flou empilé |
+| `v8.5.0` | `0d54fc5` | 2026-10-30 | Chat (v8.5.0) : barre d'écriture en verre, le fil défile dessous |
+| `v8.5.1` | `ad99b81` | 2026-10-30 | Verre (v8.5.1) : la barre d'écriture du chat floute de nouveau le fil |
+| `v8.5.2` | `9ae5919` | 2026-10-30 | Chat (v8.5.2) : gris neutre à 10 % sur la barre d'écriture |
+| `v8.5.3` | `23cbe99` | 2026-10-30 | Chat (v8.5.3) : barre d'écriture teintée de la couleur du fond du chat |
+| `v8.5.4` | `7aa78ea` | 2026-10-30 | Chat (v8.5.4) : barre d'écriture sans surlignage au focus, teinte fixe |
+| `v8.6.0` | `9a5d24a` | 2026-10-30 | Chat (v8.6.0) : actions à cheval sur le bord haut, chat fonctionnel dans la vitrine |
+| `v8.7.0` | `d671d6d` | 2026-10-30 | Verre (v8.7.0) : couche de la couleur du dessous sur toutes les surfaces, détectée par js/glass.js |
+| `v8.7.1` | `5a2328e` | 2026-10-30 | Verre (v8.7.1) : couche du dessous à 20 % |
+| `v8.7.2` | `3a7fc8f` | 2026-10-30 | Verre (v8.7.2) : couche du dessous à 60 %, comme la barre d'écriture validée |
+| `v8.8.0` | `dfabc23` | 2026-10-31 | Verre (v8.8.0) : voile à 15 % par défaut, couche du dessous à 50 %, boutons compris |
+| `v8.9.0` | `2c213aa` | 2026-10-31 | Chat (v8.9.0) : palette d'émojis complète avec recherche dans la langue du système |
+| `v8.9.1` | `b55276d` | 2026-10-31 | Verre (v8.9.1) : la couleur du dessous arrive dès l'ouverture d'un menu, pas après l'animation |
+| `v8.10.0` | `7b6f57e` | 2026-10-31 | Menus (v8.10.0) : tout menu contextuel se ferme sur Échap ou sur un clic ailleurs |
+| `v8.10.1` | `4eb5780` | 2026-10-31 | Menus (v8.10.1) : data-pinned garde ouverts les menus montrés ouverts |
 | `v8.10.2` | `21632ad` | 2026-10-31 | Menus (v8.10.1) : data-pinned garde ouverts les menus montrés ouverts |
-| `v8.10.3` | `726533b` | 2026-10-31 | Menus (v8.10.3) : retrait de data-pinned, les menus de la vitrine se ferment comme les autres |
-| `v8.10.4` | `bfe7cf7` | 2026-10-31 | Vitrine (v8.10.4) : sortie dans son propre dépôt, showcase/, ignoré ici |
+| `v8.10.3` | `492c448` | 2026-10-31 | Menus (v8.10.3) : retrait de data-pinned, les menus de la vitrine se ferment comme les autres |
+| `v8.10.4` | `80f9e07` | 2026-10-31 | Vitrine (v8.10.4) : sortie dans son propre dépôt, showcase/, ignoré ici |
 
 ## Ancien journal des versions
 

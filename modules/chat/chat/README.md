@@ -1,0 +1,11 @@
+# chat
+
+Fichiers : `chat.css`.
+
+## Rôle
+
+- `.chat`, un fil à la manière de Discord, sans bulles (`__messages`, `__message`, `--mine`, `__avatar`, `__head`, `__author`, `__time`, `__text`) ; un message qui suit le même auteur (`--follow`) n'a ni avatar ni nom, son heure apparaît au survol dans la marge (`__gutter`) ; au survol la ligne se surligne. Séparateurs : `__divider` (date), `__notice`. Sans fond propre (on le pose dans un `.glass` ou un `.panel`) ; jeton `--chat-avatar` (40 px). Réagir : `__actions` (un seul petit bloc de verre, en haut à droite, au survol, au clavier ou `.is-active`), `<details class="chat__react">` + `__picker` (palette d'émojis, rétraction avec `menus.js`), `__reactions` + `__reaction` (`--mine`). Répondre : `__quote`, placée avant l'avatar, que relie une ligne courbe ; `__replying` se place dans la barre d'écriture, en première ligne. Médias : `__media` (`--grid`), `__file` + `__file-name`. Écriture : `__compose`, une barre de verre qui flotte sur le bas du fil (les messages défilent dessous ; le fil réserve sa hauteur en bas, plus grande avec `__replying`) (joindre, `.field__input`, émoji, envoyer). Les blocs d'un message (citation, avatar, en-tête, texte, médias, réactions, actions) en sont les enfants directs : la grille place l'avatar en colonne 1 et le reste en colonne 2. La palette s'ouvre dans le fil qui défile : elle peut demander de défiler.
+
+## Pourquoi
+
+- Chat, à la manière de Discord, en verre plat. .chat ne pose pas de fond : on le met dans un .glass ou un .panel. Message : avatar rond (--chat-avatar, 40 px), nom et heure, texte ; un message qui suit le même auteur (.chat__message--follow) n'a ni avatar ni nom, son heure apparaît au survol dans la marge (.chat__gutter). Au survol, la ligne se surligne d'un voile léger et un petit bloc de verre (.chat__actions) réunit ses boutons d'action, centré sur son bord haut. .chat__react--up ouvre la palette vers le haut. Réponse : une ligne courbe part de l'avatar vers une mini-citation (.chat__quote) au-dessus du nom. Écriture (.chat__compose) : une barre de verre (sur ::before, pour que sa palette d'émojis floute), qui flotte sur le bas du fil (les messages défilent dessous) qui contient joindre, le champ, émoji et envoyer ; le bandeau .chat__replying se place dedans, en première ligne. Jamais de barre à gauche.

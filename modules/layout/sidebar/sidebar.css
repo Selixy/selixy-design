@@ -1,0 +1,5 @@
+.sidebar { display: flex; flex-wrap: wrap; align-items: flex-start; gap: var(--gap, var(--space-3)); }
+.sidebar__side { flex: 1 1 var(--sidebar-width); }
+.sidebar__main { flex: 999 1 0; min-width: min(100%, 50%); }
+.sidebar--s { --gap: var(--space-1); }
+.sidebar--l { --gap: var(--space-4); }

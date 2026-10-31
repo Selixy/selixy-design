@@ -1,6 +1,0 @@
-/* Surface : un bloc de contenu en verre (comme .glass) avec une marge intérieure, coins légèrement arrondis (--corner), sans bord.
-   .surface--clickable renforce le voile au survol. .empty : message d'état vide, posé sur la page. */
-.surface { padding: var(--space-2); border-radius: var(--corner); color: var(--text-h); background: var(--_under), color-mix(in srgb, var(--glass-tint) var(--glass-shift), transparent); -webkit-backdrop-filter: blur(var(--glass-blur)); backdrop-filter: blur(var(--glass-blur)); }
-.surface--clickable { cursor: pointer; transition: background-color var(--transition); }
-.surface--clickable:hover { background: var(--_under), color-mix(in srgb, var(--glass-tint) var(--glass-shift-hover), transparent); }
-.empty { padding: var(--space-4) var(--space-2); text-align: center; color: var(--text-h); }

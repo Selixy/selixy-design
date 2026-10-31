@@ -1,0 +1,4 @@
+.container {
+  box-sizing: border-box; width: 100%; max-width: var(--container-width); margin-inline: auto;
+  padding-left: max(var(--space-2), env(safe-area-inset-left, 0px)); padding-right: max(var(--space-2), env(safe-area-inset-right, 0px));
+}

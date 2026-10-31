@@ -1,0 +1,9 @@
+.form-card {
+  max-width: 26rem;
+  margin: var(--space-4) auto;
+  padding: var(--space-3);
+  background: color-mix(in srgb, var(--glass-tint) var(--glass-shift), transparent);
+  -webkit-backdrop-filter: blur(var(--glass-blur)); backdrop-filter: blur(var(--glass-blur));
+  border-radius: var(--corner);
+}
+.form-card h1 { margin: 0 0 var(--space-2); font-size: 1.4rem; color: var(--text-h); }

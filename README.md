@@ -108,5 +108,9 @@ Composants et dispositions refaits sur les mêmes règles (verre plat, coins à 
 
 ## Versions
 
-- `v0.1.0` (2026-10-31) : nouvelle numérotation, la bibliothèque n'a pas encore de version majeure. Contenu de l'ancienne
+Publication sur GitHub (`Selixy/selixy-design`, public) : un commit d'export par version, fait à partir de l'étiquette
+(`git archive <tag> css js tools README.md HISTORIQUE.md`, plus `LICENSE` et `.gitignore` propres à GitHub), étiqueté
+de même. L'historique de travail reste privé : ce n'est pas un miroir.
+
+- `v0.1` (2026-10-31) : nouvelle numérotation, la bibliothèque n'a pas encore de version majeure. Contenu de l'ancienne
   v8.10.4 ; versions et journal d'avant : `HISTORIQUE.md`.

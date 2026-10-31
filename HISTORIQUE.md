@@ -1,7 +1,7 @@
-# Historique avant v0.1.0
+# Historique avant v0.1
 
 Jusqu'au 2026-10-31, chaque commit montait la version (v0.1.0 à v8.10.4) : des numéros de version majeure pour une
-bibliothèque qui n'en avait encore aucune. La numérotation repart de v0.1.0 (état de v8.10.4) jusqu'à une vraie v1.0.0.
+bibliothèque qui n'en avait encore aucune. La numérotation repart de v0.1 (état de v8.10.4), en deux nombres (vX.Y), jusqu'à une vraie v1.0.
 Les anciennes étiquettes sont retirées ; leurs commits restent dans l'historique (sauf `v8.10.2`, commit erroné jamais
 publié). Une copie faite par `tools/copy-to.sh` avec un ancien numéro se retrouve ici.
 

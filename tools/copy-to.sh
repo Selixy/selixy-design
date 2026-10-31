@@ -3,7 +3,7 @@
 # Usage : copy-to.sh <tag> <dossier-css> [dossier-js]
 set -euo pipefail
 
-tag=${1:?tag manquant, par exemple v0.1.0}
+tag=${1:?tag manquant, par exemple v0.1}
 dest=${2:?dossier de destination manquant}
 dest_js=${3:-}
 depot="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
